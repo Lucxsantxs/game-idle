@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Idle Mining</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+        }
+        #resources {
+            font-size: 3em;
+            color: #f39c12;
+            margin: 20px;
+        }
+        #mineButton {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #mineButton:hover {
+            background-color: #2980b9;
+        }
+        #hackButton {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            margin-top: 20px;
+        }
+        #hackButton:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Jogo Idle Mining</h1>
+    <div id="resources">100</div>
+    <button id="mineButton">Minerar</button>
+    <br><br>
+    <button id="hackButton">Hackear para 1 Milhão</button>
+
+    <script>
+        // Variável que armazena os recursos do jogador
+        let resources = 100;
+
+        // Função que aumenta os recursos
+        function mineResources() {
+            resources += 10;  // Adiciona 10 de recursos por clique
+            document.getElementById('resources').textContent = resources;
+        }
+
+        // Função de "hack" para alterar os recursos diretamente
+        function hackResources() {
+            resources = 1000000;  // Define os recursos para 1 milhão
+            document.getElementById('resources').textContent = resources;
+        }
+
+        // Configuração do botão para minerar
+        document.getElementById('mineButton').addEventListener('click', mineResources);
+
+        // Configuração do botão para hackear os recursos
+        document.getElementById('hackButton').addEventListener('click', hackResources);
+    </script>
+
+</body>
+</html>
